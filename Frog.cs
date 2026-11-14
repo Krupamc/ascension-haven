@@ -26,46 +26,46 @@ public partial class Frog : CharacterBody2D
 
 		_animatedSprite.Play("up");
 	}
-
 	public void Die()
 	{
 		GetTree().ChangeSceneToFile("res://BounceBack.tscn");
 	}
 
-	// if (direction.Y < 0 && direction.X < 0)
-	// {
-	// 	_animatedSprite.Play("up_left");
-	// }
-	// else if (direction.Y < 0 && direction.X > 0)
-	// {
-	// 	_animatedSprite.Play("up_right");
-	// }
-	// else if (direction.Y > 0 && direction.X < 0)
-	// {
-	// 	_animatedSprite.Play("down_left");
-	// }
-	// else if (direction.Y > 0 && direction.X > 0)
-	// {
-	// 	_animatedSprite.Play("down_right");
-	// }
-	// else if (direction.Y < 0)
-	// {
-	// 	_animatedSprite.Play("up");
-	// }
-	// else if (direction.Y > 0)
-	// {
-	// 	_animatedSprite.Play("down");
-	// }
-	// else if (direction.X > 0)
-	// {
-	// 	_animatedSprite.Play("right");
-	// }
-	// else if (direction.X < 0)
-	// {
-	// 	_animatedSprite.Play("left");
-	// }
-	// else
-	// {
-	// 	_animatedSprite.Play("idle");
-	// }
+		// if (direction.Y < 0 && direction.X < 0)
+		// {
+		// 	_animatedSprite.Play("up_left");
+		// }
+		// else if (direction.Y < 0 && direction.X > 0)
+		// {
+		// 	_animatedSprite.Play("up_right");
+		// }
+		// else if (direction.Y > 0 && direction.X < 0)
+		// {
+		// 	_animatedSprite.Play("down_left");
+		// }
+		// else if (direction.Y > 0 && direction.X > 0)
+		// {
+		// 	_animatedSprite.Play("down_right");
+		// }
+		// else if (direction.Y < 0)
+		// {
+		// 	_animatedSprite.Play("up");
+		// }
+		// else if (direction.Y > 0)
+		// {
+		// 	_animatedSprite.Play("down");
+		// }
+		// else if (direction.X > 0)
+		// {
+		// 	_animatedSprite.Play("right");
+		// }
+		// else if (direction.X < 0)
+		// {
+		// 	_animatedSprite.Play("left");
+		// }
+		// else
+		// {
+		// 	_animatedSprite.Play("idle");
+		// }
 }
+
