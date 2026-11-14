@@ -24,4 +24,6 @@ public partial class TimeBetweenWalls : Label
 	{
 		return _timeBetweenWalls;
 	}
+
+	
 }

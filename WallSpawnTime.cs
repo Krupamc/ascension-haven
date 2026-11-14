@@ -3,10 +3,16 @@ using System;
 
 public partial class WallSpawnTime : Timer
 {
+	private PackedScene _wallScene = GD.Load<PackedScene>("res://wall.tscn");
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		
+	}
+
+	public void OnTimeout()
+	{
+		SpawnWall();
 	}
 
 
@@ -35,4 +41,16 @@ public partial class WallSpawnTime : Timer
 				break;
 		}
 	}
+
+	private void SpawnWall()
+    {
+        // 2. Instantiate the packed scene into a usable node
+        Node2D newWall = (Node2D)_wallScene.Instantiate();
+
+        // 3. Set its position (optional)
+        newWall.Position = new Vector2(400, 0);
+
+        // 4. Add it as a child to the current scene tree so it appears in the game
+        AddChild(newWall);
+    }
 }
