@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cowy1q826825t"]
+
+[ext_resource type="Script" uid="uid://c84emssfqh2nr" path="res://Frog.cs" id="1_1iknd"]
+[ext_resource type="Texture2D" uid="uid://wafufsn5kn1j" path="res://icon.svg" id="2_l1ikb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yw8f0"]
+radius = 65.85
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g81jt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l1ikb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l1ikb")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1936720484]
+script = ExtResource("1_1iknd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1713719531]
+shape = SubResource("CircleShape2D_yw8f0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1297155729]
+sprite_frames = SubResource("SpriteFrames_g81jt")
+animation = &"up"
