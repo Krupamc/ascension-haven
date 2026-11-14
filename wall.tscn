@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://8xnlj6uv4yoh"]
+
+[ext_resource type="Script" uid="uid://b2322yy4ovqsy" path="res://Wall.cs" id="1_xxgf6"]
+[ext_resource type="Script" uid="uid://cudk4o8j5v4kn" path="res://Slider.cs" id="2_y4f30"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sm2qb"]
+size = Vector2(402, 25)
+
+[node name="Walls" type="Node2D" unique_id=209578490]
+script = ExtResource("1_xxgf6")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1268324147]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=885048630]
+position = Vector2(191, -2.5)
+shape = SubResource("RectangleShape2D_sm2qb")
+script = ExtResource("2_y4f30")
