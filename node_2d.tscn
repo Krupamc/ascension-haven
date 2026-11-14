@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://b6oxc1v866cer"]
+
+[ext_resource type="Script" uid="uid://dp6q7p38w73cf" path="res://Background.cs" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://b5mev0wjctkoc" path="res://assets/background.png" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://ot0p2a2d4uk8" path="res://assets/background1.png" id="3_kdubu"]
+[ext_resource type="PackedScene" uid="uid://cowy1q826825t" path="res://Frog.tscn" id="4_0hol4"]
+[ext_resource type="Script" uid="uid://xixgwnyc7y4d" path="res://Difficulty.cs" id="4_q6r6c"]
+[ext_resource type="Script" uid="uid://y6tv742sdudx" path="res://TotalTime.cs" id="5_q6r6c"]
+[ext_resource type="Script" uid="uid://bvrb4lwndeyo4" path="res://WallSpawnTime.cs" id="6_kdubu"]
+[ext_resource type="Script" uid="uid://soxmhuf81gh" path="res://TimeBetweenWalls.cs" id="8_rj586"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sm2qb"]
+size = Vector2(20, 2011)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(20, 2000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(1090, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(720, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ukej"]
+
+[node name="Node2D" type="Node2D" unique_id=1589994445]
+
+[node name="Control" type="Control" parent="." unique_id=988009589]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control" unique_id=777049642]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 753.0
+offset_bottom = 1084.0
+mouse_filter = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Control" unique_id=2087082276]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 750.0
+offset_bottom = 1050.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer" unique_id=212965586]
+handle_input_locally = false
+size = Vector2i(720, 1020)
+render_target_update_mode = 4
+
+[node name="Parallax2D" type="Parallax2D" parent="Control/SubViewportContainer/SubViewport" unique_id=1678829368]
+z_index = -10
+repeat_size = Vector2(0, 720)
+autoscroll = Vector2(0, 100)
+ignore_camera_scroll = true
+script = ExtResource("1_epypp")
+
+[node name="BackgroundA" type="Sprite2D" parent="Control/SubViewportContainer/SubViewport/Parallax2D" unique_id=297798817]
+position = Vector2(0, -116)
+scale = Vector2(0.5020834, 0.31406257)
+texture = ExtResource("2_epypp")
+centered = false
+
+[node name="BackgroundB" type="Sprite2D" parent="Control/SubViewportContainer/SubViewport/Parallax2D" unique_id=381045193]
+position = Vector2(13, 604)
+scale = Vector2(0.5020834, 0.31406257)
+texture = ExtResource("3_kdubu")
+centered = false
+
+[node name="Boundaries StaticBody2D" type="StaticBody2D" parent="Control/SubViewportContainer/SubViewport" unique_id=284239035]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Left" type="CollisionShape2D" parent="Control/SubViewportContainer/SubViewport/Boundaries StaticBody2D" unique_id=1245695684]
+position = Vector2(-8, 18.5)
+shape = SubResource("RectangleShape2D_sm2qb")
+
+[node name="Right" type="CollisionShape2D" parent="Control/SubViewportContainer/SubViewport/Boundaries StaticBody2D" unique_id=2060981529]
+position = Vector2(730, 32)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="Top" type="CollisionShape2D" parent="Control/SubViewportContainer/SubViewport/Boundaries StaticBody2D" unique_id=546527732]
+position = Vector2(184, -9)
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="Down" type="CollisionShape2D" parent="Control/SubViewportContainer/SubViewport/Boundaries StaticBody2D" unique_id=1596115361]
+position = Vector2(360, 1031)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="CharacterBody2D2" parent="Control/SubViewportContainer/SubViewport" unique_id=1936720484 instance=ExtResource("4_0hol4")]
+position = Vector2(368, 536)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1978912497]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1266234005]
+shape = SubResource("RectangleShape2D_6ukej")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1730804601]
+offset_left = 753.0
+offset_top = -8.0
+offset_right = 1008.0
+offset_bottom = 1096.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1643773292]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1349186437]
+layout_mode = 2
+
+[node name="Difficulty Timer" type="Timer" parent="." unique_id=1779542995]
+wait_time = 30.0
+autostart = true
+
+[node name="Time Timer" type="Timer" parent="." unique_id=2005432271]
+autostart = true
+
+[node name="Wall Spawn Time" type="Timer" parent="." unique_id=1026661750]
+autostart = true
+script = ExtResource("6_kdubu")
+
+[node name="Difficulty" type="Label" parent="." unique_id=210011886 node_paths=PackedStringArray("_timer")]
+offset_left = 755.0
+offset_top = 361.0
+offset_right = 1035.0
+offset_bottom = 493.0
+script = ExtResource("4_q6r6c")
+_timer = NodePath("../Difficulty Timer")
+
+[node name="Total Time(seconds)" type="Label" parent="." unique_id=348224461 node_paths=PackedStringArray("_timer")]
+offset_left = 753.0
+offset_top = 266.0
+offset_right = 793.0
+offset_bottom = 289.0
+script = ExtResource("5_q6r6c")
+_timer = NodePath("../Time Timer")
+
+[node name="Time between walls" type="Label" parent="." unique_id=413687817 node_paths=PackedStringArray("_timer")]
+offset_left = 753.0
+offset_top = 322.0
+offset_right = 793.0
+offset_bottom = 345.0
+script = ExtResource("8_rj586")
+_timer = NodePath("../Wall Spawn Time")
