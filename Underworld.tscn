@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b61w5brvgminv" path="res://goat.tscn" id="4_iosb2"]
 [ext_resource type="Script" uid="uid://bvrb4lwndeyo4" path="res://WallSpawnTime.cs" id="5_2rylw"]
 [ext_resource type="Script" uid="uid://xixgwnyc7y4d" path="res://Difficulty.cs" id="6_hwpod"]
-[ext_resource type="Script" uid="uid://y6tv742sdudx" path="res://TotalTime.cs" id="7_t02nh"]
+[ext_resource type="Script" uid="uid://8x5ekmbwqnpx" path="res://TotalTimeR2.cs" id="7_n185b"]
 [ext_resource type="Script" uid="uid://soxmhuf81gh" path="res://TimeBetweenWalls.cs" id="8_narml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm2qb"]
@@ -129,12 +129,12 @@ offset_bottom = 493.0
 script = ExtResource("6_hwpod")
 _timer = NodePath("../Difficulty Timer")
 
-[node name="Total Time(seconds)" type="Label" parent="." unique_id=348224461 node_paths=PackedStringArray("_timer")]
+[node name="Total Time(seconds)2" type="Label" parent="." unique_id=348224461 node_paths=PackedStringArray("_timer")]
 offset_left = 753.0
 offset_top = 266.0
 offset_right = 793.0
 offset_bottom = 289.0
-script = ExtResource("7_t02nh")
+script = ExtResource("7_n185b")
 _timer = NodePath("../Time Timer")
 
 [node name="Time between walls" type="Label" parent="." unique_id=413687817 node_paths=PackedStringArray("_timer")]
