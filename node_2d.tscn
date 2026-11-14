@@ -33,10 +33,10 @@ offset_bottom = 40.0
 
 [node name="Panel" type="Panel" parent="Control" unique_id=777049642]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 24.0
-offset_right = 756.0
-offset_bottom = 1056.0
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 753.0
+offset_bottom = 1084.0
 mouse_filter = 2
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Control" unique_id=2087082276]
@@ -92,7 +92,7 @@ position = Vector2(360, 1031)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="CharacterBody2D2" parent="Control/SubViewportContainer/SubViewport" unique_id=1936720484 instance=ExtResource("4_0hol4")]
-position = Vector2(433, 552)
+position = Vector2(368, 536)
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1978912497]
 
@@ -100,10 +100,10 @@ position = Vector2(433, 552)
 shape = SubResource("RectangleShape2D_6ukej")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1730804601]
-offset_left = 756.0
-offset_top = 22.0
-offset_right = 1860.0
-offset_bottom = 1042.0
+offset_left = 753.0
+offset_top = -8.0
+offset_right = 1008.0
+offset_bottom = 1096.0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1643773292]
 layout_mode = 2
