@@ -120,10 +120,10 @@ wait_time = 30.0
 autostart = true
 
 [node name="Difficulty" type="Label" parent="." unique_id=210011886 node_paths=PackedStringArray("_timer")]
-offset_left = 798.0
-offset_top = 337.0
-offset_right = 1078.0
-offset_bottom = 469.0
+offset_left = 755.0
+offset_top = 361.0
+offset_right = 1035.0
+offset_bottom = 493.0
 script = ExtResource("4_q6r6c")
 _timer = NodePath("../Difficulty Timer")
 
@@ -131,10 +131,10 @@ _timer = NodePath("../Difficulty Timer")
 autostart = true
 
 [node name="Total Time(seconds)" type="Label" parent="." unique_id=348224461 node_paths=PackedStringArray("_timer")]
-offset_left = 810.0
-offset_top = 278.0
-offset_right = 850.0
-offset_bottom = 301.0
+offset_left = 753.0
+offset_top = 266.0
+offset_right = 793.0
+offset_bottom = 289.0
 script = ExtResource("5_q6r6c")
 _timer = NodePath("../Time Timer")
 
@@ -143,9 +143,9 @@ autostart = true
 script = ExtResource("6_kdubu")
 
 [node name="Time between walls" type="Label" parent="." unique_id=413687817 node_paths=PackedStringArray("_timer")]
-offset_left = 818.0
-offset_top = 318.0
-offset_right = 858.0
-offset_bottom = 341.0
+offset_left = 753.0
+offset_top = 322.0
+offset_right = 793.0
+offset_bottom = 345.0
 script = ExtResource("8_rj586")
 _timer = NodePath("../Wall Spawn Time")
