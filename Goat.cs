@@ -29,6 +29,6 @@ public partial class Goat : CharacterBody2D
 
 	public void Die()
 	{
-		
+		GetTree().ChangeSceneToFile("res://over.tscn");
 	}
 }

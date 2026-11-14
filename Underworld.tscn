@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cjlfmirtq0x5q"]
 
 [ext_resource type="Script" uid="uid://dp6q7p38w73cf" path="res://Background.cs" id="1_n185b"]
-[ext_resource type="Texture2D" uid="uid://b5mev0wjctkoc" path="res://assets/background.png" id="2_p6mvl"]
-[ext_resource type="Texture2D" uid="uid://ot0p2a2d4uk8" path="res://assets/background1.png" id="3_t0lp8"]
+[ext_resource type="Texture2D" uid="uid://cgun0832wjri" path="res://assets/IMG_1178.png" id="2_n185b"]
+[ext_resource type="Texture2D" uid="uid://jai143csd400" path="res://assets/IMG_1179.png" id="3_p6mvl"]
 [ext_resource type="PackedScene" uid="uid://b61w5brvgminv" path="res://goat.tscn" id="4_iosb2"]
 [ext_resource type="Script" uid="uid://bvrb4lwndeyo4" path="res://WallSpawnTime.cs" id="5_2rylw"]
 [ext_resource type="Script" uid="uid://xixgwnyc7y4d" path="res://Difficulty.cs" id="6_hwpod"]
@@ -62,13 +62,13 @@ script = ExtResource("1_n185b")
 [node name="BackgroundA" type="Sprite2D" parent="Control/SubViewportContainer/SubViewport/Parallax2D" unique_id=297798817]
 position = Vector2(0, -116)
 scale = Vector2(0.5020834, 0.31406257)
-texture = ExtResource("2_p6mvl")
+texture = ExtResource("2_n185b")
 centered = false
 
 [node name="BackgroundB" type="Sprite2D" parent="Control/SubViewportContainer/SubViewport/Parallax2D" unique_id=381045193]
 position = Vector2(13, 604)
 scale = Vector2(0.5020834, 0.31406257)
-texture = ExtResource("3_t0lp8")
+texture = ExtResource("3_p6mvl")
 centered = false
 
 [node name="Boundaries StaticBody2D" type="StaticBody2D" parent="Control/SubViewportContainer/SubViewport" unique_id=284239035]
