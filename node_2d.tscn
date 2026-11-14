@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cowy1q826825t" path="res://Frog.tscn" id="4_0hol4"]
 [ext_resource type="Script" uid="uid://xixgwnyc7y4d" path="res://Difficulty.cs" id="4_q6r6c"]
 [ext_resource type="Script" uid="uid://y6tv742sdudx" path="res://TotalTime.cs" id="5_q6r6c"]
+[ext_resource type="Script" uid="uid://bvrb4lwndeyo4" path="res://WallSpawnTime.cs" id="6_kdubu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm2qb"]
 size = Vector2(20, 2011)
@@ -135,3 +136,7 @@ offset_right = 850.0
 offset_bottom = 301.0
 script = ExtResource("5_q6r6c")
 _timer = NodePath("../Time Timer")
+
+[node name="Wall Spawn Time" type="Timer" parent="." unique_id=1026661750]
+autostart = true
+script = ExtResource("6_kdubu")
