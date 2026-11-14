@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://1rh3bluqdeqh"]
+
+[ext_resource type="Script" uid="uid://co8ream5g0r0e" path="res://Character.cs" id="1_wtcfe"]
+
+[node name="Node2D" type="Node2D" unique_id=1589994445]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1978912497]
+script = ExtResource("1_wtcfe")
