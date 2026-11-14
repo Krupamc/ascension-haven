@@ -16,4 +16,9 @@ public partial class TimeBetweenWalls : Label
 	{
 		Text = "Time Between Walls: " + _timer.WaitTime.ToString();
 	}
+
+	public double GetTimeBetweenWalls()
+	{
+		return _timer.WaitTime;
+	}
 }
