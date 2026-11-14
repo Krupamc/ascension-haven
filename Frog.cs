@@ -17,7 +17,7 @@ public partial class Frog : CharacterBody2D
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 
 		float actualSpeed = speed;
-		if (Input.IsKeyPressed(Key.Shift) || Input.IsActionPressed("ui_shift"))
+		if (Input.IsKeyPressed(Key.Shift))
 		{
 			actualSpeed *= focusMultiplier;
 		}
