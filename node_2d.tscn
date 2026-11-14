@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://y6tv742sdudx" path="res://TotalTime.cs" id="5_q6r6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm2qb"]
-size = Vector2(20, 2000)
+size = Vector2(20, 2011)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(20, 2000)
@@ -74,17 +74,15 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Left" type="CollisionShape2D" parent="Control/SubViewportContainer/SubViewport/Boundaries StaticBody2D" unique_id=1245695684]
-position = Vector2(11, 19)
+position = Vector2(-8, 18.5)
 shape = SubResource("RectangleShape2D_sm2qb")
-disabled = true
-debug_color = Color(0.9180014, 0.2085473, 0.49695283, 0.41960785)
 
 [node name="Right" type="CollisionShape2D" parent="Control/SubViewportContainer/SubViewport/Boundaries StaticBody2D" unique_id=2060981529]
-position = Vector2(715, 31)
+position = Vector2(730, 32)
 shape = SubResource("RectangleShape2D_0hol4")
 
 [node name="Top" type="CollisionShape2D" parent="Control/SubViewportContainer/SubViewport/Boundaries StaticBody2D" unique_id=546527732]
-position = Vector2(185, 0)
+position = Vector2(184, -9)
 shape = SubResource("RectangleShape2D_epypp")
 
 [node name="Down" type="CollisionShape2D" parent="Control/SubViewportContainer/SubViewport/Boundaries StaticBody2D" unique_id=1596115361]
