@@ -26,4 +26,9 @@ public partial class Goat : CharacterBody2D
 
 		_animatedSprite.Play("up");
 	}
+
+	public void Die()
+	{
+		
+	}
 }
