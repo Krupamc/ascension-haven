@@ -15,11 +15,17 @@ public partial class Background : Parallax2D
     private float difficultyCheckInterval { get; set; } = 0.5f;
 
     private int _lastDifficulty = int.MinValue;
+    private int difficulty = Difficulty.getDiffCount();
+
 
     public override void _Ready()
     {
-        float scrollSpeed = scrollSpeedFrac * _lastDifficulty;
-        GD.Print($"Background scroll speed: {scrollSpeed}");
+        float scrollSpeed = 200;
+        if (difficulty > 1)
+        {
+            scrollSpeed = scrollSpeedFrac * difficulty;
+        }
+        // GD.Print($"Background scroll speed: {scrollSpeed}");
 
         Sprite2D backgroundA = GetNodeOrNull<Sprite2D>("BackgroundA");
         Sprite2D backgroundB = GetNodeOrNull<Sprite2D>("BackgroundB");
@@ -44,7 +50,7 @@ public partial class Background : Parallax2D
         var difficultyTimer = new Timer
         {
             Name = "BackgroundDifficultyTimer",
-            WaitTime = Mathf.Max(0.1f, difficultyCheckInterval),
+            WaitTime = difficultyCheckInterval,
             OneShot = false
         };
 
@@ -56,9 +62,9 @@ public partial class Background : Parallax2D
         Autoscroll = new Vector2(0.0f, scrollSpeed);
     }
 
-     private void UpdateBackgroundSpeed()
+    private void UpdateBackgroundSpeed()
     {
-        int difficulty = Difficulty.getDiffCount();
+        difficulty = Difficulty.getDiffCount();
 
         if (difficulty == _lastDifficulty)
         {
@@ -66,14 +72,19 @@ public partial class Background : Parallax2D
         }
 
         _lastDifficulty = difficulty;
-
-        float scrollSpeed = scrollSpeedFrac * difficulty;
+        
+        float scrollSpeed = 200;
+        if (difficulty > 1)
+        {
+            scrollSpeed = scrollSpeedFrac * difficulty;
+        }
+        
         Autoscroll = new Vector2(0.0f, scrollSpeed);
 
-        GD.Print(
-            $"Difficulty: {difficulty} | " +
-            $"Background scroll speed: {scrollSpeed}"
-        );
+        // GD.Print(
+        //     $"Difficulty: {difficulty} | " +
+        //     $"Background scroll speed: {scrollSpeed}"
+        // );
     }
     private float ConfigureSprite(Sprite2D sprite)
     {
