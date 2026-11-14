@@ -2,16 +2,35 @@
 
 [ext_resource type="Script" uid="uid://b2322yy4ovqsy" path="res://Wall.cs" id="1_xxgf6"]
 [ext_resource type="Script" uid="uid://cudk4o8j5v4kn" path="res://Slider.cs" id="2_y4f30"]
+[ext_resource type="Texture2D" uid="uid://qxioa0rk6d45" path="res://assets/Untitled145_20261114163020.png" id="3_xduj2"]
+[ext_resource type="Texture2D" uid="uid://daj4is4sntoj3" path="res://assets/Untitled145_20261114163024.png" id="4_bbgl8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm2qb"]
-size = Vector2(402, 25)
+size = Vector2(232, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ukej"]
+size = Vector2(226, 30)
 
 [node name="Walls" type="Node2D" unique_id=209578490]
 script = ExtResource("1_xxgf6")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1268324147]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=885048630]
-position = Vector2(191, -2.5)
+[node name="left" type="CollisionShape2D" parent="RigidBody2D" unique_id=885048630]
+position = Vector2(26, -2)
 shape = SubResource("RectangleShape2D_sm2qb")
 script = ExtResource("2_y4f30")
+
+[node name="right" type="CollisionShape2D" parent="RigidBody2D/left" unique_id=1651125333]
+position = Vector2(311, -2)
+shape = SubResource("RectangleShape2D_6ukej")
+
+[node name="wall left" type="Sprite2D" parent="RigidBody2D" unique_id=353030855]
+position = Vector2(29.5, 158)
+scale = Vector2(0.1659722, 0.23188478)
+texture = ExtResource("3_xduj2")
+
+[node name="wall right" type="Sprite2D" parent="RigidBody2D" unique_id=1712880527]
+position = Vector2(336.5, 44)
+scale = Vector2(0.16041663, 0.21484374)
+texture = ExtResource("4_bbgl8")
