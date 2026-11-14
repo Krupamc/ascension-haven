@@ -9,3 +9,5 @@ Keyboard: Arrows to move
 Disclaimer: We are not responsible for any harm caused, to object or living being, during interaction with this game.
 
 We used AI for assistance with Godot basics (e.g. Changing the scene).
+
+ItchIO: https://krupamc.itch.io/ascension-haven
