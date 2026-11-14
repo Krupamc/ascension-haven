@@ -24,7 +24,7 @@ public partial class Frog : CharacterBody2D
 		Velocity = direction * actualSpeed;
 		MoveAndSlide();
 
-		_animatedSprite.Play("up");
+		_animatedSprite.Play("up");~
 
 		// if (direction.Y < 0 && direction.X < 0)
 		// {
