@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7mur56l8lqgu"
-path="res://.godot/imported/uparrow.png-2421d5a36e08a24c0d8b4dd6058185dc.ctex"
+path="res://.godot/imported/uparrow.png-5ccd222b58e7b1d370590070c0520e31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/uparrow.png"
-dest_files=["res://.godot/imported/uparrow.png-2421d5a36e08a24c0d8b4dd6058185dc.ctex"]
+source_file="res://assets/Sprites/uparrow.png"
+dest_files=["res://.godot/imported/uparrow.png-5ccd222b58e7b1d370590070c0520e31.ctex"]
 
 [params]
 
