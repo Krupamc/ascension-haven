@@ -2,31 +2,73 @@
 
 [ext_resource type="Texture2D" uid="uid://wafufsn5kn1j" path="res://icon.svg" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://dp6q7p38w73cf" path="res://Background.cs" id="1_epypp"]
-[ext_resource type="Script" uid="uid://co8ream5g0r0e" path="res://Character.cs" id="1_wtcfe"]
+[ext_resource type="Script" path="res://Character.cs" id="1_wtcfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sm2qb"]
+size = Vector2(20, 760)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ukej"]
 
 [node name="Node2D" type="Node2D" unique_id=1589994445]
 
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1678829368]
+[node name="Control" type="Control" parent="." unique_id=988009589]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control" unique_id=777049642]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Control" unique_id=2087082276]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer" unique_id=212965586]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Parallax2D" type="Parallax2D" parent="Control/SubViewportContainer/SubViewport" unique_id=1678829368]
 z_index = -10
 repeat_size = Vector2(0, 720)
 autoscroll = Vector2(0, 100)
 ignore_camera_scroll = true
 script = ExtResource("1_epypp")
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=297798817]
+[node name="Sprite2D" type="Sprite2D" parent="Control/SubViewportContainer/SubViewport/Parallax2D" unique_id=297798817]
 texture = ExtResource("1_0e48y")
 centered = false
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D/Sprite2D" unique_id=1744800784]
-visible = false
-texture = ExtResource("1_0e48y")
-centered = false
-offset = Vector2(0, 200)
+[node name="Boundaries StaticBody2D" type="StaticBody2D" parent="Control/SubViewportContainer/SubViewport" unique_id=284239035]
+
+[node name="Left" type="CollisionShape2D" parent="Control/SubViewportContainer/SubViewport/Boundaries StaticBody2D" unique_id=1245695684]
+shape = SubResource("RectangleShape2D_sm2qb")
+
+[node name="Right" type="CollisionShape2D" parent="Control/SubViewportContainer/SubViewport/Boundaries StaticBody2D" unique_id=2060981529]
+
+[node name="Up" type="CollisionShape2D" parent="Control/SubViewportContainer/SubViewport/Boundaries StaticBody2D" unique_id=546527732]
+
+[node name="Down" type="CollisionShape2D" parent="Control/SubViewportContainer/SubViewport/Boundaries StaticBody2D" unique_id=1596115361]
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1978912497]
 script = ExtResource("1_wtcfe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1266234005]
 shape = SubResource("RectangleShape2D_6ukej")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1730804601]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1643773292]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1349186437]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=868423101]
+layout_mode = 2
+text = "Put something  here"
