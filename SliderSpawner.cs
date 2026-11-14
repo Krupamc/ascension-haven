@@ -4,7 +4,6 @@ public partial class SliderSpawner : Node2D
 {
     [Signal]
     public delegate void PlayerHitEventHandler(Node2D player);
-
     [Export] public Timer SpawnTimer { get; set; }
     [Export] public CharacterBody2D Player { get; set; }
     [Export] public float WallSpeed { get; set; } = 180.0f;
@@ -47,10 +46,6 @@ public partial class SliderSpawner : Node2D
         _random.Randomize();
         _activeWalls = new Node2D { Name = "ActiveSliderWalls" };
         AddChild(_activeWalls);
-
-        SpawnTimer.Timeout += OnSpawnTimeout;
-        _connected = true;
-        Callable.From(StartSpawning).CallDeferred();
     }
 
     private void StartSpawning()
@@ -70,8 +65,37 @@ public partial class SliderSpawner : Node2D
         Callable.From(SpawnWall).CallDeferred();
     }
 
-    private void SpawnWall()
+    public void SpawnWall()
     {
+        GD.Print("3: SpawnWall was reached.");
+
+        if (!IsInsideTree())
+        {
+            GD.PushError("Spawner is not inside the running scene.");
+            return;
+        }
+
+        if (!GodotObject.IsInstanceValid(Player))
+        {
+            GD.PushError("Player is missing. Assign Frog to the spawner's Player field.");
+            return;
+        }
+
+        if (!GodotObject.IsInstanceValid(_activeWalls))
+        {
+            GD.PushError("ActiveSliderWalls was not created in _Ready().");
+            return;
+        }
+
+        if (_activeWalls.GetChildCount() >= MaxActiveWalls)
+        {
+            GD.Print(
+                $"Spawn blocked: {_activeWalls.GetChildCount()} active walls, " +
+                $"limit is {MaxActiveWalls}."
+            );
+            return;
+        }
+        
         if (!IsInsideTree() || !GodotObject.IsInstanceValid(Player) ||
             _activeWalls.GetChildCount() >= MaxActiveWalls)
         {
