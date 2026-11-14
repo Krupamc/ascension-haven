@@ -26,6 +26,11 @@ public partial class Frog : CharacterBody2D
 
 		_animatedSprite.Play("up");
 
+		public void Die()
+		{
+			GetTree().ChangeSceneToFile("res://BounceBack.tscn");
+		}
+
 		// if (direction.Y < 0 && direction.X < 0)
 		// {
 		// 	_animatedSprite.Play("up_left");

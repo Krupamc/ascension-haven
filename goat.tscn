@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://b61w5brvgminv"]
+
+[ext_resource type="Script" uid="uid://cp01p5bvdswbr" path="res://Goat.cs" id="1_ln5fd"]
+[ext_resource type="Texture2D" uid="uid://c8and2ewrpt0v" path="res://assets/Sprites/Goat.png" id="2_wg28h"]
+[ext_resource type="Script" uid="uid://cdopuv17ovoco" path="res://AnimatedSprite2d.cs" id="3_rqp3g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ukej"]
+radius = 50.61
+height = 190.7
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b71tx"]
+atlas = ExtResource("2_wg28h")
+region = Rect2(0, 0, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i75mp"]
+atlas = ExtResource("2_wg28h")
+region = Rect2(1984, 0, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om2j6"]
+atlas = ExtResource("2_wg28h")
+region = Rect2(1984, 1984, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byqud"]
+atlas = ExtResource("2_wg28h")
+region = Rect2(0, 1984, 1984, 1984)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g81jt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b71tx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i75mp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om2j6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byqud")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ln5fd"]
+radius = 23.28
+height = 121.03
+
+[node name="Goat" type="CharacterBody2D" unique_id=1936720484]
+position = Vector2(244, 227)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ln5fd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1009658285]
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="Area2D" unique_id=631184670]
+shape = SubResource("CapsuleShape2D_6ukej")
+target_position = Vector2(0, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1451935376]
+scale = Vector2(0.07, 0.07)
+sprite_frames = SubResource("SpriteFrames_g81jt")
+animation = &"up"
+frame_progress = 0.44880873
+offset = Vector2(0, 75)
+script = ExtResource("3_rqp3g")
+
+[node name="DeathHitbox" type="CollisionShape2D" parent="." unique_id=1713719531]
+shape = SubResource("CapsuleShape2D_ln5fd")
