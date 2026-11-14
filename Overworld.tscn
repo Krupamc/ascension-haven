@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://xixgwnyc7y4d" path="res://Difficulty.cs" id="6_gvvtw"]
 [ext_resource type="Script" uid="uid://y6tv742sdudx" path="res://TotalTime.cs" id="7_e1e3d"]
 [ext_resource type="Script" uid="uid://soxmhuf81gh" path="res://TimeBetweenWalls.cs" id="8_u51vy"]
+[ext_resource type="Script" uid="uid://bmj8d4p6xbp27" path="res://Score.cs" id="9_o65s7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm2qb"]
 size = Vector2(20, 2011)
@@ -145,3 +146,8 @@ offset_right = 793.0
 offset_bottom = 345.0
 script = ExtResource("8_u51vy")
 _timer = NodePath("../Wall Spawn Time")
+
+[node name="Score" type="Label" parent="." unique_id=2042754811]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("9_o65s7")
