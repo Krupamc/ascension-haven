@@ -160,3 +160,93 @@ script = ExtResource("9_o65s7")
 
 [node name="Walls" parent="." unique_id=209578490 instance=ExtResource("11_pb3nd")]
 position = Vector2(193, -44)
+
+[node name="Walls2" parent="." unique_id=44160095 instance=ExtResource("11_pb3nd")]
+position = Vector2(366, -227)
+
+[node name="Walls3" parent="." unique_id=243459071 instance=ExtResource("11_pb3nd")]
+position = Vector2(62, -576)
+
+[node name="Walls4" parent="." unique_id=151610214 instance=ExtResource("11_pb3nd")]
+position = Vector2(295, -1107)
+
+[node name="Walls5" parent="." unique_id=460869351 instance=ExtResource("11_pb3nd")]
+position = Vector2(204, -1551)
+
+[node name="Walls6" parent="." unique_id=577549290 instance=ExtResource("11_pb3nd")]
+position = Vector2(381, -2097)
+
+[node name="Walls7" parent="." unique_id=1951030241 instance=ExtResource("11_pb3nd")]
+position = Vector2(148, -2486)
+
+[node name="Walls8" parent="." unique_id=1971873774 instance=ExtResource("11_pb3nd")]
+position = Vector2(265, -829)
+
+[node name="Walls9" parent="." unique_id=1997787979 instance=ExtResource("11_pb3nd")]
+position = Vector2(311, -2916)
+
+[node name="Walls10" parent="." unique_id=1896120785 instance=ExtResource("11_pb3nd")]
+position = Vector2(30, -4218)
+
+[node name="Walls11" parent="." unique_id=483338315 instance=ExtResource("11_pb3nd")]
+position = Vector2(130, -9396)
+
+[node name="Walls12" parent="." unique_id=419468707 instance=ExtResource("11_pb3nd")]
+position = Vector2(429, -13329)
+
+[node name="Walls13" parent="." unique_id=1110990272 instance=ExtResource("11_pb3nd")]
+position = Vector2(279, -16715)
+
+[node name="Walls14" parent="." unique_id=3352506 instance=ExtResource("11_pb3nd")]
+position = Vector2(279, -21046)
+
+[node name="Walls15" parent="." unique_id=1631640368 instance=ExtResource("11_pb3nd")]
+position = Vector2(30, -23685)
+
+[node name="Walls16" parent="." unique_id=838943202 instance=ExtResource("11_pb3nd")]
+position = Vector2(429, -28016)
+
+[node name="Walls17" parent="." unique_id=2070057043 instance=ExtResource("11_pb3nd")]
+position = Vector2(194, -33438)
+
+[node name="Walls18" parent="." unique_id=1804899248 instance=ExtResource("11_pb3nd")]
+position = Vector2(97, -39453)
+
+[node name="Walls19" parent="." unique_id=1907843550 instance=ExtResource("11_pb3nd")]
+position = Vector2(582, -45662)
+
+[node name="Walls20" parent="." unique_id=1436915092 instance=ExtResource("11_pb3nd")]
+position = Vector2(97, -49543)
+
+[node name="Walls21" parent="." unique_id=1747988565 instance=ExtResource("11_pb3nd")]
+position = Vector2(776, -58565)
+
+[node name="Walls22" parent="." unique_id=1494417321 instance=ExtResource("11_pb3nd")]
+position = Vector2(194, -67491)
+
+[node name="Walls23" parent="." unique_id=774522830 instance=ExtResource("11_pb3nd")]
+position = Vector2(776, -78745)
+
+[node name="Walls24" parent="." unique_id=2001688183 instance=ExtResource("11_pb3nd")]
+position = Vector2(281, -97159)
+
+[node name="Walls25" parent="." unique_id=35287013 instance=ExtResource("11_pb3nd")]
+position = Vector2(922, -125012)
+
+[node name="Walls26" parent="." unique_id=732847406 instance=ExtResource("11_pb3nd")]
+position = Vector2(708, -114234)
+
+[node name="Walls27" parent="." unique_id=1714741872 instance=ExtResource("11_pb3nd")]
+position = Vector2(1135, -106123)
+
+[node name="Walls28" parent="." unique_id=1985669460 instance=ExtResource("11_pb3nd")]
+position = Vector2(815, -87981)
+
+[node name="Walls29" parent="." unique_id=652563767 instance=ExtResource("11_pb3nd")]
+position = Vector2(815, -139206)
+
+[node name="Walls30" parent="." unique_id=618918832 instance=ExtResource("11_pb3nd")]
+position = Vector2(1349, -152226)
+
+[node name="Walls31" parent="." unique_id=1594389697 instance=ExtResource("11_pb3nd")]
+position = Vector2(388, -160763)

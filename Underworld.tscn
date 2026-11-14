@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://xixgwnyc7y4d" path="res://Difficulty.cs" id="6_hwpod"]
 [ext_resource type="Script" uid="uid://8x5ekmbwqnpx" path="res://TotalTimeR2.cs" id="7_n185b"]
 [ext_resource type="Script" uid="uid://soxmhuf81gh" path="res://TimeBetweenWalls.cs" id="8_narml"]
+[ext_resource type="PackedScene" uid="uid://8xnlj6uv4yoh" path="res://wall.tscn" id="9_p6mvl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm2qb"]
 size = Vector2(20, 2011)
@@ -144,3 +145,60 @@ offset_right = 793.0
 offset_bottom = 345.0
 script = ExtResource("8_narml")
 _timer = NodePath("../Wall Spawn Time")
+
+[node name="Walls" parent="." unique_id=209578490 instance=ExtResource("9_p6mvl")]
+position = Vector2(73, -358)
+
+[node name="Walls2" parent="." unique_id=460953106 instance=ExtResource("9_p6mvl")]
+position = Vector2(396, -764)
+
+[node name="Walls3" parent="." unique_id=1770325422 instance=ExtResource("9_p6mvl")]
+position = Vector2(115, -1361)
+
+[node name="Walls4" parent="." unique_id=1306990063 instance=ExtResource("9_p6mvl")]
+position = Vector2(339, -1664)
+
+[node name="Walls5" parent="." unique_id=1738203346 instance=ExtResource("9_p6mvl")]
+position = Vector2(157, -2018)
+
+[node name="Walls6" parent="." unique_id=1409292824 instance=ExtResource("9_p6mvl")]
+position = Vector2(612, -2663)
+
+[node name="Walls7" parent="." unique_id=709234172 instance=ExtResource("9_p6mvl")]
+position = Vector2(115, -3453)
+
+[node name="Walls8" parent="." unique_id=516613335 instance=ExtResource("9_p6mvl")]
+position = Vector2(419, -3932)
+
+[node name="Walls9" parent="." unique_id=347684878 instance=ExtResource("9_p6mvl")]
+position = Vector2(221, -4425)
+
+[node name="Walls10" parent="." unique_id=1527385221 instance=ExtResource("9_p6mvl")]
+position = Vector2(285, -4930)
+
+[node name="Walls11" parent="." unique_id=1893061823 instance=ExtResource("9_p6mvl")]
+position = Vector2(36, -5603)
+
+[node name="Walls12" parent="." unique_id=1564335690 instance=ExtResource("9_p6mvl")]
+position = Vector2(339, -6329)
+
+[node name="Walls13" parent="." unique_id=1187070184 instance=ExtResource("9_p6mvl")]
+position = Vector2(277, -10738)
+
+[node name="Walls14" parent="." unique_id=1931169798 instance=ExtResource("9_p6mvl")]
+position = Vector2(96, -19428)
+
+[node name="Walls15" parent="." unique_id=26998361 instance=ExtResource("9_p6mvl")]
+position = Vector2(277, -26307)
+
+[node name="Walls16" parent="." unique_id=2089630388 instance=ExtResource("9_p6mvl")]
+position = Vector2(490, -35377)
+
+[node name="Walls17" parent="." unique_id=1813278695 instance=ExtResource("9_p6mvl")]
+position = Vector2(142, -39958)
+
+[node name="Walls18" parent="." unique_id=253006642 instance=ExtResource("9_p6mvl")]
+position = Vector2(440, -47077)
+
+[node name="Walls19" parent="." unique_id=1540745760 instance=ExtResource("9_p6mvl")]
+position = Vector2(341, -52155)

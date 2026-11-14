@@ -21,7 +21,7 @@ public partial class TotalTimeR2 : Label
 
 	public override void _Process(double delta)
 	{
-		if (_totalTime >= 180)
+		if (_totalTime >= 30)
 		{
 			GetTree().ChangeSceneToFile("res://Overworld.tscn");
 		}

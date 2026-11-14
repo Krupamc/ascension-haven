@@ -51,6 +51,6 @@ public partial class WallSpawnTime : Timer
         newWall.Position = new Vector2(400, 0);
 
         // 4. Add it as a child to the current scene tree so it appears in the game
-        AddChild(newWall);
+        AddChild(newWall);																						
     }
 }
