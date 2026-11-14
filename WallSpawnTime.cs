@@ -31,7 +31,7 @@ public partial class WallSpawnTime : Timer
 				WaitTime = 3f;
 				break;
 			default:
-				WaitTime = Math.Pow(0.1, (Difficulty.getDiffCount() - 3.75));
+				WaitTime = Math.Pow(0.9, (Difficulty.getDiffCount() - 3.75));
 				break;
 		}
 	}
