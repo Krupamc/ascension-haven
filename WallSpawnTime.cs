@@ -9,6 +9,7 @@ public partial class WallSpawnTime : Timer
 		
 	}
 
+
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
@@ -30,7 +31,7 @@ public partial class WallSpawnTime : Timer
 				WaitTime = 3f;
 				break;
 			default:
-				WaitTime = Math.Pow(0.1, (Difficulty.getDiffCount() - 6.7));
+				WaitTime = Math.Pow(0.1, (Difficulty.getDiffCount() - 3.75));
 				break;
 		}
 	}
