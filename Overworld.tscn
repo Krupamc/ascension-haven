@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://y6tv742sdudx" path="res://TotalTime.cs" id="7_e1e3d"]
 [ext_resource type="Script" uid="uid://soxmhuf81gh" path="res://TimeBetweenWalls.cs" id="8_u51vy"]
 [ext_resource type="Script" uid="uid://bmj8d4p6xbp27" path="res://Score.cs" id="9_o65s7"]
+[ext_resource type="PackedScene" uid="uid://8xnlj6uv4yoh" path="res://wall.tscn" id="11_pb3nd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm2qb"]
 size = Vector2(20, 2011)
@@ -124,10 +125,9 @@ autostart = true
 [node name="Time Timer" type="Timer" parent="." unique_id=2005432271]
 autostart = true
 
-[node name="Wall Spawn Time" type="Timer" parent="." unique_id=1026661750 node_paths=PackedStringArray("Spawner")]
+[node name="Wall Spawn Time" type="Timer" parent="." unique_id=1026661750]
 autostart = true
 script = ExtResource("5_rh6fe")
-Spawner = NodePath("../Control/SubViewportContainer/SubViewport/SliderSpawner")
 
 [node name="Difficulty" type="Label" parent="." unique_id=210011886 node_paths=PackedStringArray("_timer")]
 offset_left = 755.0
@@ -157,3 +157,6 @@ _timer = NodePath("../Wall Spawn Time")
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("9_o65s7")
+
+[node name="Walls" parent="." unique_id=209578490 instance=ExtResource("11_pb3nd")]
+position = Vector2(193, -44)
