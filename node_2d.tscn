@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://wafufsn5kn1j" path="res://icon.svg" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://dp6q7p38w73cf" path="res://Background.cs" id="1_epypp"]
+[ext_resource type="Script" path="res://Character.cs" id="1_wtcfe"]
+[ext_resource type="PackedScene" uid="uid://cowy1q826825t" path="res://Frog.tscn" id="4_0hol4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm2qb"]
 size = Vector2(20, 1080)
@@ -93,3 +95,6 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=868423101]
 layout_mode = 2
 text = "Put something  here"
+
+[node name="CharacterBody2D" parent="." unique_id=1936720484 instance=ExtResource("4_0hol4")]
+position = Vector2(283, 269)
