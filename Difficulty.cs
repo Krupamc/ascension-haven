@@ -5,7 +5,12 @@ public partial class Difficulty : Label
 {
 	// Called when the node enters the scene tree for the first time.
 	[Export] private Timer _timer;
-	public int _diffCount = 0;
+	private static int _diffCount = 1;
+
+	public static int getDiffCount()
+	{
+		return _diffCount;
+	}
 	public override void _Ready()
 	{
 		_timer.Timeout += OnTimerTimeout;
