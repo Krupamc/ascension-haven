@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dp6q7p38w73cf" path="res://Background.cs" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://b5mev0wjctkoc" path="res://assets/background.png" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://ot0p2a2d4uk8" path="res://assets/background1.png" id="3_kdubu"]
 [ext_resource type="PackedScene" uid="uid://cowy1q826825t" path="res://Frog.tscn" id="4_0hol4"]
 [ext_resource type="Script" uid="uid://xixgwnyc7y4d" path="res://Difficulty.cs" id="4_q6r6c"]
 [ext_resource type="Script" uid="uid://y6tv742sdudx" path="res://TotalTime.cs" id="5_q6r6c"]
@@ -57,10 +58,16 @@ autoscroll = Vector2(0, 100)
 ignore_camera_scroll = true
 script = ExtResource("1_epypp")
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/SubViewportContainer/SubViewport/Parallax2D" unique_id=297798817]
-position = Vector2(-3.0000038, -10)
+[node name="BackgroundA" type="Sprite2D" parent="Control/SubViewportContainer/SubViewport/Parallax2D" unique_id=297798817]
+position = Vector2(0, -116)
 scale = Vector2(0.5020834, 0.31406257)
 texture = ExtResource("2_epypp")
+centered = false
+
+[node name="BackgroundB" type="Sprite2D" parent="Control/SubViewportContainer/SubViewport/Parallax2D" unique_id=381045193]
+position = Vector2(13, 604)
+scale = Vector2(0.5020834, 0.31406257)
+texture = ExtResource("3_kdubu")
 centered = false
 
 [node name="Boundaries StaticBody2D" type="StaticBody2D" parent="Control/SubViewportContainer/SubViewport" unique_id=284239035]
