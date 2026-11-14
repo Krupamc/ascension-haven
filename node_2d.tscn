@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dp6q7p38w73cf" path="res://Background.cs" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://b5mev0wjctkoc" path="res://assets/background.png" id="2_epypp"]
 [ext_resource type="PackedScene" uid="uid://cowy1q826825t" path="res://Frog.tscn" id="4_0hol4"]
+[ext_resource type="Script" uid="uid://xixgwnyc7y4d" path="res://Difficulty.cs" id="4_q6r6c"]
+[ext_resource type="Script" uid="uid://y6tv742sdudx" path="res://TotalTime.cs" id="5_q6r6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm2qb"]
 size = Vector2(20, 2000)
@@ -105,9 +107,24 @@ text = "Put something  here"
 position = Vector2(283, 269)
 
 [node name="Difficulty Timer" type="Timer" parent="." unique_id=1779542995]
+wait_time = 30.0
+autostart = true
 
-[node name="Difficulty" type="Label" parent="." unique_id=210011886]
-offset_left = 821.0
-offset_top = 316.0
-offset_right = 861.0
-offset_bottom = 339.0
+[node name="Difficulty" type="Label" parent="." unique_id=210011886 node_paths=PackedStringArray("_timer")]
+offset_left = 798.0
+offset_top = 337.0
+offset_right = 1078.0
+offset_bottom = 469.0
+script = ExtResource("4_q6r6c")
+_timer = NodePath("../Difficulty Timer")
+
+[node name="Time Timer" type="Timer" parent="." unique_id=2005432271]
+autostart = true
+
+[node name="Total Time(seconds)" type="Label" parent="." unique_id=348224461 node_paths=PackedStringArray("_timer")]
+offset_left = 810.0
+offset_top = 278.0
+offset_right = 850.0
+offset_bottom = 301.0
+script = ExtResource("5_q6r6c")
+_timer = NodePath("../Time Timer")
