@@ -3,8 +3,8 @@ using System;
 
 public partial class Frog : CharacterBody2D
 {
-	private float speed = 300.0f;
-	private float focusMultiplier = 0.39f;
+	private float speed = 900.0f;
+	private float focusMultiplier = 0.3f;
 
 	private AnimatedSprite2D _animatedSprite;
 	public override void _Ready()
