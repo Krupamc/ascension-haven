@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD:assets/Sprites/uparrow.png.import
-uid="uid://b7mur56l8lqgu"
-path="res://.godot/imported/uparrow.png-5ccd222b58e7b1d370590070c0520e31.ctex"
-=======
-uid="uid://cm6b51valtouh"
+uid="uid://c816fw40r8hgx"
 path="res://.godot/imported/up_arrow.png-62bbf50b66a7729a2d2a35b3549860fb.ctex"
->>>>>>> 623185b4c5bc2c1338ec941bd6390a2fc360a442:assets/Sprites/up_arrow.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< HEAD:assets/Sprites/uparrow.png.import
-source_file="res://assets/Sprites/uparrow.png"
-dest_files=["res://.godot/imported/uparrow.png-5ccd222b58e7b1d370590070c0520e31.ctex"]
-=======
 source_file="res://assets/Sprites/up_arrow.png"
 dest_files=["res://.godot/imported/up_arrow.png-62bbf50b66a7729a2d2a35b3549860fb.ctex"]
->>>>>>> 623185b4c5bc2c1338ec941bd6390a2fc360a442:assets/Sprites/up_arrow.png.import
 
 [params]
 

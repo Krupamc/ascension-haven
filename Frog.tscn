@@ -2,17 +2,73 @@
 
 [ext_resource type="Script" uid="uid://c84emssfqh2nr" path="res://Frog.cs" id="1_1iknd"]
 [ext_resource type="Texture2D" uid="uid://wafufsn5kn1j" path="res://icon.svg" id="2_l1ikb"]
-[ext_resource type="Texture2D" uid="uid://b7mur56l8lqgu" path="res://assets/Sprites/uparrow.png" id="3_l1ikb"]
+[ext_resource type="Texture2D" uid="uid://0gbcnml3d1h6" path="res://assets/Sprites/left_arrow.png" id="2_o57g7"]
+[ext_resource type="Texture2D" uid="uid://sfu015jk0s01" path="res://assets/Sprites/down_arrow.png" id="3_2qd4t"]
+[ext_resource type="Texture2D" path="res://assets/Sprites/up_arrow.png" id="3_l1ikb"]
+[ext_resource type="Texture2D" uid="uid://dw7is51lsva66" path="res://assets/Sprites/right_arrow.png" id="4_3k64a"]
+[ext_resource type="Texture2D" uid="uid://c816fw40r8hgx" path="res://assets/Sprites/up_arrow.png" id="7_xh4pd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g81jt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_o57g7")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2qd4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_o57g7")
+}],
+"loop": 1,
+"name": &"down_left",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2qd4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3k64a")
+}],
+"loop": 1,
+"name": &"down_right",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_l1ikb")
 }],
 "loop": 1,
-"name": &"default",
-"speed": 5.0
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o57g7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l1ikb")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3k64a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l1ikb")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -23,18 +79,46 @@ animations = [{
 }],
 "loop": 1,
 "name": &"up",
-"speed": 5.0
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_xh4pd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_o57g7")
+}],
+"loop": 1,
+"name": &"up_left",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_xh4pd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3k64a")
+}],
+"loop": 1,
+"name": &"up_right",
+"speed": 12.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yw8f0"]
 radius = 65.85
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ukej"]
+radius = 100.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1936720484]
 script = ExtResource("1_1iknd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1297155729]
 sprite_frames = SubResource("SpriteFrames_g81jt")
-animation = &"up"
+animation = &"up_right"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1713719531]
+[node name="DeathHitbox" type="CollisionShape2D" parent="." unique_id=1713719531]
 shape = SubResource("CircleShape2D_yw8f0")
+
+[node name="GrazeHitbox" type="CollisionShape2D" parent="." unique_id=50840030]
+shape = SubResource("CircleShape2D_6ukej")
