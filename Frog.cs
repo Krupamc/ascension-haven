@@ -17,31 +17,14 @@ public partial class Frog : CharacterBody2D
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 
 		float actualSpeed = speed;
-		if (Input.IsKeyPressed(Key.Shift))
+		if (Input.IsKeyPressed(Key.Shift) || Input.IsActionPressed("ui_shift"))
 		{
 			actualSpeed *= focusMultiplier;
 		}
 		Velocity = direction * actualSpeed;
 		MoveAndSlide();
 
-
-		if (direction.Y < 0)
-		{
-			_animatedSprite.Play("up");
-		}
-		else if (direction.Y > 0)
-		{
-			_animatedSprite.Play("down");
-		}
-		else if (direction.X > 0)
-		{
-			_animatedSprite.Play("right");
-		}
-		else if (direction.X < 0)
-		{
-			_animatedSprite.Play("left");
-		}
-		else if (direction.Y < 0 && direction.X < 0)
+		if (direction.Y < 0 && direction.X < 0)
 		{
 			_animatedSprite.Play("up_left");
 		}
@@ -56,6 +39,22 @@ public partial class Frog : CharacterBody2D
 		else if (direction.Y > 0 && direction.X > 0)
 		{
 			_animatedSprite.Play("down_right");
+		}
+		else if (direction.Y < 0)
+		{
+			_animatedSprite.Play("up");
+		}
+		else if (direction.Y > 0)
+		{
+			_animatedSprite.Play("down");
+		}
+		else if (direction.X > 0)
+		{
+			_animatedSprite.Play("right");
+		}
+		else if (direction.X < 0)
+		{
+			_animatedSprite.Play("left");
 		}
 		else
 		{
