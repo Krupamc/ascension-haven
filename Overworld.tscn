@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ot0p2a2d4uk8" path="res://assets/background1.png" id="3_rkx53"]
 [ext_resource type="PackedScene" uid="uid://cowy1q826825t" path="res://Frog.tscn" id="4_pb3nd"]
 [ext_resource type="Script" uid="uid://bvrb4lwndeyo4" path="res://WallSpawnTime.cs" id="5_rh6fe"]
+[ext_resource type="Script" uid="uid://bo1t3or5nc486" path="res://SliderSpawner.cs" id="5_rkx53"]
 [ext_resource type="Script" uid="uid://xixgwnyc7y4d" path="res://Difficulty.cs" id="6_gvvtw"]
 [ext_resource type="Script" uid="uid://y6tv742sdudx" path="res://TotalTime.cs" id="7_e1e3d"]
 [ext_resource type="Script" uid="uid://soxmhuf81gh" path="res://TimeBetweenWalls.cs" id="8_u51vy"]
@@ -95,6 +96,10 @@ shape = SubResource("RectangleShape2D_q6r6c")
 [node name="Frog" parent="Control/SubViewportContainer/SubViewport" unique_id=1902219612 instance=ExtResource("4_pb3nd")]
 position = Vector2(368, 536)
 
+[node name="SliderSpawner" type="Node2D" parent="Control/SubViewportContainer/SubViewport" unique_id=684331115 node_paths=PackedStringArray("Player")]
+script = ExtResource("5_rkx53")
+Player = NodePath("../Frog")
+
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1978912497]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1266234005]
@@ -119,9 +124,10 @@ autostart = true
 [node name="Time Timer" type="Timer" parent="." unique_id=2005432271]
 autostart = true
 
-[node name="Wall Spawn Time" type="Timer" parent="." unique_id=1026661750]
+[node name="Wall Spawn Time" type="Timer" parent="." unique_id=1026661750 node_paths=PackedStringArray("Spawner")]
 autostart = true
 script = ExtResource("5_rh6fe")
+Spawner = NodePath("../Control/SubViewportContainer/SubViewport/SliderSpawner")
 
 [node name="Difficulty" type="Label" parent="." unique_id=210011886 node_paths=PackedStringArray("_timer")]
 offset_left = 755.0
