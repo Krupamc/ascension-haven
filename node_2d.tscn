@@ -86,10 +86,10 @@ shape = SubResource("RectangleShape2D_q6r6c")
 shape = SubResource("RectangleShape2D_6ukej")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1730804601]
-offset_left = 736.0
-offset_top = 30.0
-offset_right = 1840.0
-offset_bottom = 1050.0
+offset_left = 756.0
+offset_top = 22.0
+offset_right = 1860.0
+offset_bottom = 1042.0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1643773292]
 layout_mode = 2
@@ -103,3 +103,11 @@ text = "Put something  here"
 
 [node name="CharacterBody2D" parent="." unique_id=1936720484 instance=ExtResource("4_0hol4")]
 position = Vector2(283, 269)
+
+[node name="Difficulty Timer" type="Timer" parent="." unique_id=1779542995]
+
+[node name="Difficulty" type="Label" parent="." unique_id=210011886]
+offset_left = 821.0
+offset_top = 316.0
+offset_right = 861.0
+offset_bottom = 339.0
