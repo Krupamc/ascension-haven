@@ -3,36 +3,39 @@ using System;
 
 public partial class WallSpawnTime : Timer
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-		
-	}
+    [Export] public double MinimumInterval { get; set; } = 0.75;
+    private int _lastDifficulty = -1;
 
+    public override void _Ready()
+    {
+        ApplyDifficulty();
+        OneShot = false;
+        Start();
+    }
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-		switch (Difficulty.getDiffCount())
-		{
-			case 1:
-				WaitTime = 7.5f;
-				break;
-			case 2:
-				WaitTime = 6f;
-				break;
-			case 3:
-				WaitTime = 4.5f;
-				break;
-			case 4:
-				WaitTime = 3.75f;
-				break;
-			case 5:
-				WaitTime = 3f;
-				break;
-			default:
-				WaitTime = Math.Pow(0.9, (Difficulty.getDiffCount() - 3.75));
-				break;
-		}
-	}
+    public override void _Process(double delta)
+    {
+        ApplyDifficulty();
+    }
+
+    private void ApplyDifficulty()
+    {
+        int difficulty = Math.Max(1, Difficulty.getDiffCount());
+        if (difficulty == _lastDifficulty)
+            return;
+
+        _lastDifficulty = difficulty;
+        double seconds = difficulty switch
+        {
+            1 => 7.5,
+            2 => 6.0,
+            3 => 4.5,
+            4 => 3.75,
+            5 => 3.0,
+            _ => 3.0 * Math.Pow(0.9, difficulty - 5)
+        };
+
+        WaitTime = Math.Max(Math.Max(0.1, MinimumInterval), seconds);
+        // Do not call Start() every frame: it would reset the countdown.
+    }
 }
