@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://xqtmvw3nkpeh" path="res://assets/Sprites/frog-45.png" id="7_o57g7"]
 [ext_resource type="Script" uid="uid://cdopuv17ovoco" path="res://AnimatedSprite2d.cs" id="8_2qd4t"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ukej"]
+radius = 53.07
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_o57g7"]
 atlas = ExtResource("6_o57g7")
 region = Rect2(0, 0, 1984, 1984)
@@ -190,14 +193,17 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_yw8f0"]
 radius = 24.186773
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6ukej"]
-radius = 52.0
-
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1936720484]
+[node name="Frog" type="CharacterBody2D" unique_id=1936720484]
 position = Vector2(451, 220)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_1iknd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=877378986]
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="Area2D" unique_id=551616840]
+shape = SubResource("CircleShape2D_6ukej")
+target_position = Vector2(0, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1297155729]
 scale = Vector2(0.05, 0.05)
@@ -208,6 +214,3 @@ script = ExtResource("8_2qd4t")
 
 [node name="DeathHitbox" type="CollisionShape2D" parent="." unique_id=1713719531]
 shape = SubResource("CircleShape2D_yw8f0")
-
-[node name="GrazeHitbox" type="CollisionShape2D" parent="." unique_id=50840030]
-shape = SubResource("CircleShape2D_6ukej")
