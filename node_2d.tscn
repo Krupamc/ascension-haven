@@ -117,14 +117,22 @@ autostart = true
 
 [node name="Difficulty" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=210011886 node_paths=PackedStringArray("_timer")]
 layout_mode = 2
+[node name="Difficulty" type="Label" parent="." unique_id=210011886 node_paths=PackedStringArray("_timer")]
+offset_left = 755.0
+offset_top = 361.0
+offset_right = 1035.0
+offset_bottom = 493.0
 script = ExtResource("4_q6r6c")
 _timer = NodePath("../Difficulty Timer")
 
 [node name="Time Timer" type="Timer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2005432271]
 autostart = true
 
-[node name="Total Time(seconds)" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=348224461 node_paths=PackedStringArray("_timer")]
-layout_mode = 2
+[node name="Total Time(seconds)" type="Label" parent="." unique_id=348224461 node_paths=PackedStringArray("_timer")]
+offset_left = 753.0
+offset_top = 266.0
+offset_right = 793.0
+offset_bottom = 289.0
 script = ExtResource("5_q6r6c")
 _timer = NodePath("../Time Timer")
 
@@ -132,6 +140,7 @@ _timer = NodePath("../Time Timer")
 autostart = true
 script = ExtResource("6_kdubu")
 
+<<<<<<< HEAD
 [node name="Time between walls" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=413687817 node_paths=PackedStringArray("_timer")]
 layout_mode = 2
 script = ExtResource("8_rj586")
@@ -139,5 +148,12 @@ _timer = NodePath("../Wall Spawn Time")
 
 [node name="Score" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=805608788 node_paths=PackedStringArray("_timer")]
 layout_mode = 2
+=======
+[node name="Time between walls" type="Label" parent="." unique_id=413687817 node_paths=PackedStringArray("_timer")]
+offset_left = 753.0
+offset_top = 322.0
+offset_right = 793.0
+offset_bottom = 345.0
+>>>>>>> 28486d25e0e756fec0bece56b686c8d1af60a3e0
 script = ExtResource("8_rj586")
 _timer = NodePath("../Wall Spawn Time")
