@@ -2,16 +2,25 @@ using Godot;
 using System;
 
 public partial class Background : Parallax2D
-{
+{   
+
 	// Called when the node enters the scene tree for the first time.
 	[Export]
-    public float ScrollSpeed {get; private set;} = 150.0f;
+    private float scrollSpeedFrac {get; set;} = 200.0f;
 
     [Export]
-    public float PlayfieldWidth { get; set; } = 720.0f;
+    private float playfieldWidth { get; set; } = 720.0f;
+
+    [Export(PropertyHint.Range, "0.1,10.0,0.1")]
+    private float difficultyCheckInterval { get; set; } = 0.5f;
+
+    private int _lastDifficulty = int.MinValue;
 
     public override void _Ready()
     {
+        float scrollSpeed = scrollSpeedFrac * _lastDifficulty;
+        GD.Print($"Background scroll speed: {scrollSpeed}");
+
         Sprite2D backgroundA = GetNodeOrNull<Sprite2D>("BackgroundA");
         Sprite2D backgroundB = GetNodeOrNull<Sprite2D>("BackgroundB");
 
@@ -29,9 +38,43 @@ public partial class Background : Parallax2D
         IgnoreCameraScroll = true;
         ZIndex = -10;
 
-        Autoscroll = new Vector2(0.0f, ScrollSpeed);
+        // Get New Speed.
+        UpdateBackgroundSpeed();
+
+        var difficultyTimer = new Timer
+        {
+            Name = "BackgroundDifficultyTimer",
+            WaitTime = Mathf.Max(0.1f, difficultyCheckInterval),
+            OneShot = false
+        };
+
+        difficultyTimer.Timeout += UpdateBackgroundSpeed;
+
+        AddChild(difficultyTimer);
+        difficultyTimer.Start();
+
+        Autoscroll = new Vector2(0.0f, scrollSpeed);
     }
 
+     private void UpdateBackgroundSpeed()
+    {
+        int difficulty = Difficulty.getDiffCount();
+
+        if (difficulty == _lastDifficulty)
+        {
+            return;
+        }
+
+        _lastDifficulty = difficulty;
+
+        float scrollSpeed = scrollSpeedFrac * difficulty;
+        Autoscroll = new Vector2(0.0f, scrollSpeed);
+
+        GD.Print(
+            $"Difficulty: {difficulty} | " +
+            $"Background scroll speed: {scrollSpeed}"
+        );
+    }
     private float ConfigureSprite(Sprite2D sprite)
     {
         sprite.Centered = false;
@@ -39,8 +82,7 @@ public partial class Background : Parallax2D
         sprite.RegionEnabled = false;
 
         // Preserve the image's proportions while fitting the width.
-        float scaleFactor =
-                PlayfieldWidth / sprite.Texture.GetWidth();
+        float scaleFactor = playfieldWidth / sprite.Texture.GetWidth();
 
         sprite.Scale = new Vector2(scaleFactor, scaleFactor);
 
