@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://wafufsn5kn1j" path="res://icon.svg" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://dp6q7p38w73cf" path="res://Background.cs" id="1_epypp"]
-[ext_resource type="Script" path="res://Character.cs" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://cowy1q826825t" path="res://Frog.tscn" id="4_0hol4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm2qb"]
@@ -81,10 +80,10 @@ shape = SubResource("RectangleShape2D_q6r6c")
 shape = SubResource("RectangleShape2D_6ukej")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1730804601]
-offset_left = 736.0
-offset_top = 30.0
-offset_right = 1840.0
-offset_bottom = 1050.0
+offset_left = 756.0
+offset_top = 22.0
+offset_right = 1860.0
+offset_bottom = 1042.0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1643773292]
 layout_mode = 2
@@ -98,3 +97,11 @@ text = "Put something  here"
 
 [node name="CharacterBody2D" parent="." unique_id=1936720484 instance=ExtResource("4_0hol4")]
 position = Vector2(283, 269)
+
+[node name="Difficulty Timer" type="Timer" parent="." unique_id=1779542995]
+
+[node name="Difficulty" type="Label" parent="." unique_id=210011886]
+offset_left = 821.0
+offset_top = 316.0
+offset_right = 861.0
+offset_bottom = 339.0
