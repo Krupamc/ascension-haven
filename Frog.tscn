@@ -37,7 +37,6 @@ atlas = ExtResource("6_o57g7")
 region = Rect2(0, 3968, 1984, 1984)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2qd4t"]
-load_path = "res://.godot/imported/Frog(-45).png-fda1a2676ab4512ead670ba1085b4bb5.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgug4"]
 atlas = SubResource("CompressedTexture2D_2qd4t")
@@ -194,6 +193,8 @@ radius = 100.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1936720484]
 position = Vector2(451, 220)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_1iknd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1297155729]
