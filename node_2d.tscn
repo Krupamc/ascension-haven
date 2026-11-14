@@ -1,18 +1,17 @@
 [gd_scene format=3 uid="uid://1rh3bluqdeqh"]
 
-[ext_resource type="Texture2D" uid="uid://wafufsn5kn1j" path="res://icon.svg" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://dp6q7p38w73cf" path="res://Background.cs" id="1_epypp"]
-[ext_resource type="Script" path="res://Character.cs" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://b5mev0wjctkoc" path="res://assets/background.png" id="2_epypp"]
 [ext_resource type="PackedScene" uid="uid://cowy1q826825t" path="res://Frog.tscn" id="4_0hol4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm2qb"]
-size = Vector2(20, 1080)
+size = Vector2(20, 2000)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
-size = Vector2(20, 1060)
+size = Vector2(20, 2000)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
-size = Vector2(720, 20)
+size = Vector2(1090, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 size = Vector2(720, 20)
@@ -41,9 +40,11 @@ offset_left = 30.0
 offset_top = 30.0
 offset_right = 750.0
 offset_bottom = 1050.0
+stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer" unique_id=212965586]
 handle_input_locally = false
+size = Vector2i(720, 1020)
 render_target_update_mode = 4
 
 [node name="Parallax2D" type="Parallax2D" parent="Control/SubViewportContainer/SubViewport" unique_id=1678829368]
@@ -54,25 +55,29 @@ ignore_camera_scroll = true
 script = ExtResource("1_epypp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/SubViewportContainer/SubViewport/Parallax2D" unique_id=297798817]
-texture = ExtResource("1_0e48y")
+position = Vector2(-3.0000038, -10)
+scale = Vector2(0.5020834, 0.31406257)
+texture = ExtResource("2_epypp")
 centered = false
 
 [node name="Boundaries StaticBody2D" type="StaticBody2D" parent="Control/SubViewportContainer/SubViewport" unique_id=284239035]
 
 [node name="Left" type="CollisionShape2D" parent="Control/SubViewportContainer/SubViewport/Boundaries StaticBody2D" unique_id=1245695684]
-position = Vector2(-10, 510)
+position = Vector2(11, 19)
 shape = SubResource("RectangleShape2D_sm2qb")
+disabled = true
+debug_color = Color(0.9180014, 0.2085473, 0.49695283, 0.41960785)
 
 [node name="Right" type="CollisionShape2D" parent="Control/SubViewportContainer/SubViewport/Boundaries StaticBody2D" unique_id=2060981529]
-position = Vector2(20, 1060)
+position = Vector2(715, 31)
 shape = SubResource("RectangleShape2D_0hol4")
 
 [node name="Top" type="CollisionShape2D" parent="Control/SubViewportContainer/SubViewport/Boundaries StaticBody2D" unique_id=546527732]
-position = Vector2(360, -10)
+position = Vector2(185, 0)
 shape = SubResource("RectangleShape2D_epypp")
 
 [node name="Down" type="CollisionShape2D" parent="Control/SubViewportContainer/SubViewport/Boundaries StaticBody2D" unique_id=1596115361]
-position = Vector2(360, 1030)
+position = Vector2(360, 1031)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1978912497]
